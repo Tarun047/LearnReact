@@ -4,15 +4,27 @@ import './App.css';
 
 class App extends Component {
   render() {
-  	var message = "Welcome to the Road to learn React is really awesome, verified by TG";
-  	const dict = {text:'Sample Text Declarations'};
-  	dict.text = 'Run Time Modifications on Const Object Holders is allowed in es6';
-    let message2  = "This react app is not reloaded for every content change\nPowered by HotModuleTM";
+  	const list = [{
+      title:'React',
+      url:'https://reactjs.org/',
+      author:'Jordan Walke',
+      num_comments:3,
+      points:4,
+      objectId:0,
+    },
+    {
+      title:'Redux',
+      url:'https://redux.js.org/',
+      author:'Dan Abramov, Andrew Clark',
+      num_comments:2,
+      points:5,
+      objectId:1,
+    },]
     return (
       <div className="App">
-      	<h2>{dict.text}</h2>
-        <h2>{message}</h2>
-        <h2>{message2}</h2>
+      {list.map(function(item){
+        return <div>{item.title}</div>;
+      })}
       </div>
     );
   }
