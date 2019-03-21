@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<h1>This is a demo of JS list iterator using JSX,</h1>,document.getElementById('samplepage'));
+//ReactDOM.render(<h1>This is a demo of JS list iterator using JSX,</h1>,document.getElementById('samplepage'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -37,6 +37,12 @@ class App extends Component {
       [key]:'Robin',
     };
     this.state = {list,user};
+    this.onDismiss = this.onDismiss.bind(this);
+  }
+  onDismiss(id)
+  {
+    const updatedList = this.state.list.filter(item=>item.objectId!==id);
+    this.setState({list:updatedList});
   }
   render() {
     return (
@@ -47,7 +53,11 @@ class App extends Component {
           <span><a href={item.url}>{item.title}</a></span>
           <br/><span>{item.author}</span><br/>
           <span>{item.num_comments}</span><br/>
-          <span>{item.points}</span>
+          <span>{item.points}</span><br/>
+          <span>
+            <button onClick={()=>this.onDismiss(item.objectId)}
+            type="button">Dissmiss</button>
+          </span>
           </div>
       )}
       </div>
