@@ -37,9 +37,8 @@ class App extends Component {
       [key]:'Robin',
     };
     this.state = {list,user};
-    this.onDismiss = this.onDismiss.bind(this);
   }
-  onDismiss(id)
+  onDismiss = (id)=>
   {
     const updatedList = this.state.list.filter(item=>item.objectId!==id);
     this.setState({list:updatedList});
