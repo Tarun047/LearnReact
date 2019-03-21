@@ -21,12 +21,27 @@ class App extends Component {
   constructor(props)
   {
     super(props);
-    this.state = {list: list,};
+    //this.state = {list: list,};
+    //short hand declarations for objects
+    //this.state = {list,};
+    //Sample shortHandMethod
+    const userService = {
+      getUserName(user){
+        return user.firstname+' '+user.lastname;
+      },
+    };
+    //Computed Property Names Demonstration
+    //Basically Nothing but a dict
+    const key = 'name';
+    const user = {
+      [key]:'Robin',
+    };
+    this.state = {list,user};
   }
   render() {
     return (
       <div className="App">
-      Demonstration of Lambda Functions
+      <h2> user name is: {this.state.user['name']}</h2>
       {this.state.list.map(item=>
           <div key={item.objectId}>
           <span><a href={item.url}>{item.title}</a></span>
