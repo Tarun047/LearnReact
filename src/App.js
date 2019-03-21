@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+const list = [{
+  title:'React',
+  url:'https://reactjs.org/',
+  author:'Jordan Walke',
+  num_comments:3,
+  points:4,
+  objectId:0,
+},
+{
+  title:'Redux',
+  url:'https://redux.js.org/',
+  author:'Dan Abramov, Andrew Clark',
+  num_comments:2,
+  points:5,
+  objectId:1,
+},]
 class App extends Component {
+  constructor(props)
+  {
+    super(props);
+    this.state = {list: list,};
+  }
   render() {
-  	const list = [{
-      title:'React',
-      url:'https://reactjs.org/',
-      author:'Jordan Walke',
-      num_comments:3,
-      points:4,
-      objectId:0,
-    },
-    {
-      title:'Redux',
-      url:'https://redux.js.org/',
-      author:'Dan Abramov, Andrew Clark',
-      num_comments:2,
-      points:5,
-      objectId:1,
-    },]
     return (
       <div className="App">
       Demonstration of Lambda Functions
-      {list.map(item=>
+      {this.state.list.map(item=>
           <div key={item.objectId}>
           <span><a href={item.url}>{item.title}</a></span>
           <br/><span>{item.author}</span><br/>
