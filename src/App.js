@@ -22,15 +22,15 @@ class App extends Component {
     },]
     return (
       <div className="App">
-      {list.map(function(item){
-        return (
+      Demonstration of Lambda Functions
+      {list.map(item=>
           <div key={item.objectId}>
           <span><a href={item.url}>{item.title}</a></span>
           <br/><span>{item.author}</span><br/>
           <span>{item.num_comments}</span><br/>
           <span>{item.points}</span>
-          </div>);
-      })}
+          </div>
+      )}
       </div>
     );
   }
