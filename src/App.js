@@ -4,22 +4,13 @@ import './App.css';
 
 class App extends Component {
   render() {
+  	var message = "Welcome to the Road to learn React is really awesome, verified by TG";
+  	const dict = {text:'Sample Text Declarations'};
+  	dict.text = 'Run Time Modifications on Const Object Holders is allowed in es6';
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      	<h2>{dict.text}</h2>
+        <h2>{message}</h2>
       </div>
     );
   }
