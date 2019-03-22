@@ -60,7 +60,7 @@ class App extends Component {
       <div className="App">
       <h2> user name is: {this.state.user['name']}</h2>
       <form>
-      <input type="text" onChange={this.onSearchChange}/>
+      <input type="text" value = {searchTerm} onChange={this.onSearchChange}/>
       </form>
       {this.state.list.filter(isSearched(this.state.searchTerm)).map(item=>
           <div key={item.objectId}>
