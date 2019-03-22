@@ -54,6 +54,8 @@ class App extends Component {
     this.setState({searchTerm:event.target.value})
   }
   render() {
+    //Tuple Unpacking kind of concept - Destructing
+    const {searchTerm, list} = this.state;
     return (
       <div className="App">
       <h2> user name is: {this.state.user['name']}</h2>
