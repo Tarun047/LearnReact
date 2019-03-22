@@ -27,22 +27,7 @@ class App extends Component {
   constructor(props)
   {
     super(props);
-    //this.state = {list: list,};
-    //short hand declarations for objects
-    //this.state = {list,};
-    //Sample shortHandMethod
-    const userService = {
-      getUserName(user){
-        return user.firstname+' '+user.lastname;
-      },
-    };
-    //Computed Property Names Demonstration
-    //Basically Nothing but a dict
-    const key = 'name';
-    const user = {
-      [key]:'Robin',
-    };
-    this.state = {list,user,searchTerm:""};
+    this.state = {list,searchTerm:""};
     this.onSearchChange = this.onSearchChange.bind(this);
   }
   onDismiss = (id)=>
@@ -54,13 +39,12 @@ class App extends Component {
     this.setState({searchTerm:event.target.value})
   }
   render() {
-    //Tuple Unpacking kind of concept - Destructing
     const {searchTerm, list} = this.state;
     return (
       <div className="App">
       <Search
         value = {searchTerm}
-        onChange = {this.onSearchChange}/>
+        onChange = {this.onSearchChange}>Search</Search>
       <Table
         list = {list}
         pattern = {searchTerm}
@@ -72,10 +56,10 @@ class App extends Component {
 class Search extends Component
 {
   render(){
-    const {value, onChange} = this.props;
+    const {value, onChange,children} = this.props;
     return(
       <form>
-      <input
+      {children}:<input
        type="text"
        value={value}
        onChange = {onChange}
